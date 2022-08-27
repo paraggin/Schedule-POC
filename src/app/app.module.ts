@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { EventsComponent } from './app.component';
+
+//import { AppRoutingModule } from './app-routing.module';
+import { ScheduleModule } from '@syncfusion/ej2-angular-schedule';
 
 @NgModule({
   declarations: [
-    AppComponent
+    EventsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ScheduleModule 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [EventsComponent]
 })
 export class AppModule { }
