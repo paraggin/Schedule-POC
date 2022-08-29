@@ -1,37 +1,630 @@
 <div class="control-section">
-  <div class="col-lg-9 content-wrapper">
-    <ejs-schedule width='100%' height='98vh' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
-      [(currentView)]="currentView" (eventRendered)="onEventRendered($event)" (created)="onCreate()"
-      (actionBegin)="onActionBegin()" (actionComplete)="onActionComplete()" (actionFailure)="onActionFailure()"
-      (cellClick)="onCellClick()" (cellDoubleClick)="onCellDoubleClick()" (destroyed)="onDestroyed()"
-      (navigating)="onNavigating()" (eventClick)="onEventClick()" (popupOpen)="onPopupOpen()">
-    </ejs-schedule>
+  <div class="header_section">
+    <img src="../assets/images/lazard_logo.png" />
+    <h3>Technology Calendar</h3>
   </div>
-  <div class="col-lg-3 property-section" style="display: none;">
-    <div class="property-panel-section">
-      <div class="property-panel-header">Properties</div>
-      <div class="property-panel-content">
-        <div id="property" class="property-panel-table" title="Properties">
-          <table id="property" title="Event Trace">
-            <tbody>
-              <tr>
-                <td>
-                  <div class="eventarea" style="height: 45px;overflow: auto">
-                    <span class="EventLog" id="EventLog" style="word-break: normal;"></span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="evtbtn" style="padding-bottom: 10px">
-                    <button ejs-button id='clear' class="btn btn-default" (click)="onClear()">Clear</button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="Schedule_blockmain">
+    <div class="Schedule_tabBlock">
+      <div class="Schedule_blocheadleft">
+        <h3>You are logged in as GajeraP <i class="icon-info" aria-hidden="true"></i></h3>
+      </div>
+      <div class="accordion" id="ScheduleCalendaraccordian">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingLegacyReport">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#LegacyReport" aria-expanded="false" aria-controls="LegacyReport">
+              <i class="icon-task-done" aria-hidden="true"></i> Legacy Report
+            </button>
+          </h2>
+          <div id="LegacyReport" class="accordion-collapse collapse " aria-labelledby="headingLegacyReport" data-bs-parent="#ScheduleCalendaraccordian">
+            <div class="accordion-body">
+              <div class="Schedule_accfilter">
+                <div class="Schedule_accsearchbox">
+                  <h3>OPSY SID</h3>
+                  <input type="text" class="form-control" />
+                </div>
+                <div class="Schedule_accdaterange">
+                  <h3>Date:</h3>
+                  <input type="date" class="form-control" /> <span>-</span> <input type="date" class="form-control" />
+                </div>
+                <div class="Schedule_filterBtn">
+                  <button>Search</button>
+                  <button>Reset</button>
+                </div>
+              </div>
+              <div class="Schedule_accreporttype">
+                <select>
+                  <option>View</option>
+                </select>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Export to Excel
+                  </button>
+                </div>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Detach
+                  </button>
+                </div>
+              </div>
+              <div class="Schedule_accrtable">
+                <div class="Schedule_accrtableinn">
+                  <table class="table table-striped">
+                    <caption style="display:none">Data table</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Calendar Entry</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Days</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingStatsbyYear">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#StatsbyYear" aria-expanded="false" aria-controls="StatsbyYear">
+              <i class="icon-task-done" aria-hidden="true"></i> Stats by Year
+            </button>
+          </h2>
+          <div id="StatsbyYear" class="accordion-collapse collapse StatsbyYear" aria-labelledby="headingStatsbyYear" data-bs-parent="#ScheduleCalendaraccordian">
+            <div class="accordion-body">
+              <div class="Schedule_accradio">
+                <div class="form-check me-2">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    All
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Any
+                  </label>
+                </div>
+              </div>
+              <div class="Schedule_accfilter">
+                <div class="Schedule_accsearchbox">
+                  <h3>Year</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+                <div class="Schedule_accsearchbox">
+                  <h3>Department</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+                <div class="Schedule_accsearchbox">
+                  <h3>Name</h3>
+                  <input type="text" class="form-control" />
+                </div>
+                <!--<div class="Schedule_accdaterange">
+                  <h3>Date:</h3>
+                  <input type="date" class="form-control" /> <span>-</span> <input type="date" class="form-control" />
+                </div>-->
+                <div class="Schedule_filterBtn">
+                  <button>Search</button>
+                  <button>Reset</button>
+                </div>
+              </div>
+              <div class="Schedule_accreporttype">
+                <!--<select>
+                  <option>View</option>
+                </select>-->
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Export to Excel
+                  </button>
+                </div>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Detach
+                  </button>
+                </div>
+              </div>
+              <div class="Schedule_accrtable">
+                <div class="Schedule_accrtableinn">
+                  <table class="table table-striped">
+                    <caption style="display:none">Data table</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Year</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Entry</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2022</td>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>2022</td>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>2022</td>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingStatsbyDepartment">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#StatsbyDepartment" aria-expanded="false" aria-controls="StatsbyDepartment">
+              <i class="icon-task-done" aria-hidden="true"></i> Stats by Department
+            </button>
+          </h2>
+          <div id="StatsbyDepartment" class="accordion-collapse collapse" aria-labelledby="StatsbyDepartment" data-bs-parent="#ScheduleCalendaraccordian">
+            <div class="accordion-body">
+              <!--<div class="Schedule_accradio">
+                <div class="form-check me-2">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    All
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Any
+                  </label>
+                </div>
+              </div>-->
+              <div class="Schedule_accfilter">
+                <!--<div class="Schedule_accsearchbox">
+                  <h3>Year</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>-->
+                <div class="Schedule_accsearchbox">
+                  <h3>Department</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+                <!--<div class="Schedule_accsearchbox">
+                  <h3>Name</h3>
+                  <input type="text" class="form-control" />
+                </div>-->
+                <!--<div class="Schedule_accdaterange">
+                  <h3>Date:</h3>
+                  <input type="date" class="form-control" /> <span>-</span> <input type="date" class="form-control" />
+                </div>-->
+                <div class="Schedule_filterBtn">
+                  <button>Search</button>
+                  <button>Reset</button>
+                </div>
+              </div>
+              <div class="Schedule_accreporttype">
+                <!--<select>
+                  <option>View</option>
+                </select>-->
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Export to Excel
+                  </button>
+                </div>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Detach
+                  </button>
+                </div>
+              </div>
+              <div class="Schedule_accrtable">
+                <div class="Schedule_accrtableinn">
+                  <table class="table table-striped">
+                    <caption style="display:none">Data table</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Calendar Entry</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingStatsbyEmployee">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#StatsbyEmployee" aria-expanded="false" aria-controls="StatsbyEmployee">
+              <i class="icon-task-done" aria-hidden="true"></i> Stats by Employee
+            </button>
+          </h2>
+          <div id="StatsbyEmployee" class="accordion-collapse collapse" aria-labelledby="StatsbyEmployee" data-bs-parent="#ScheduleCalendaraccordian">
+            <div class="accordion-body">
+              <!--<div class="Schedule_accradio">
+                <div class="form-check me-2">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    All
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Any
+                  </label>
+                </div>
+              </div>-->
+              <div class="Schedule_accfilter">
+                <!--<div class="Schedule_accsearchbox">
+                  <h3>Year</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>-->
+                <div class="Schedule_accsearchbox">
+                  <h3>Name</h3>
+
+                  <input type="text" class="form-control" />
+                </div>
+                <!--<div class="Schedule_accsearchbox">
+                  <h3>Name</h3>
+                  <input type="text" class="form-control" />
+                </div>-->
+                <!--<div class="Schedule_accdaterange">
+                  <h3>Date:</h3>
+                  <input type="date" class="form-control" /> <span>-</span> <input type="date" class="form-control" />
+                </div>-->
+                <div class="Schedule_filterBtn">
+                  <button>Search</button>
+                  <button>Reset</button>
+                </div>
+              </div>
+              <div class="Schedule_accreporttype">
+                <!--<select>
+                  <option>View</option>
+                </select>-->
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Export to Excel
+                  </button>
+                </div>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Detach
+                  </button>
+                </div>
+              </div>
+              <div class="Schedule_accrtable">
+                <div class="Schedule_accrtableinn">
+                  <table class="table table-striped">
+                    <caption style="display:none">Data table</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Calendar Entry</th>
+                        <th scope="col">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingStatsDateRange">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#StatsDateRange" aria-expanded="false" aria-controls="StatsDateRange">
+              <i class="icon-task-done" aria-hidden="true"></i> Stats Date Range
+            </button>
+          </h2>
+          <div id="StatsDateRange" class="accordion-collapse collapse" aria-labelledby="StatsDateRange" data-bs-parent="#ScheduleCalendaraccordian">
+            <div class="accordion-body">
+              <div class="Schedule_accradio">
+                <h3>Match</h3>
+                <div class="form-check me-2">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    All
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Any
+                  </label>
+                </div>
+              </div>
+              <div class="Schedule_accfilter">
+                <h3 class="customtitle">Start Time:</h3>
+                <div class="Schedule_accdaterange mb-3">
+
+                  <input type="date" class="form-control" /> <span>-</span> <input type="date" class="form-control" />
+                </div>
+                <div class="Schedule_accsearchbox">
+                  <h3>Department</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+                <div class="Schedule_filterBtn">
+                  <button>Search</button>
+                  <button>Reset</button>
+                </div>
+
+              </div>
+              <div class="Schedule_accreporttype">
+                <!--<select>
+                  <option>View</option>
+                </select>-->
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Export to Excel
+                  </button>
+                </div>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Detach
+                  </button>
+                </div>
+              </div>
+              <div class="Schedule_accrtable">
+                <div class="Schedule_accrtableinn">
+                  <table class="table table-striped">
+                    <caption style="display:none">Data table</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Department</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Calendar Entry</th>
+                        <th scope="col">Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Asset Mgmt</td>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                      </tr>
+                      <tr>
+                        <td>Asset Mgmt</td>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                      </tr>
+                      <tr>
+                        <td>Asset Mgmt</td>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>26/8/2022</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingWhoisoutToday">
+            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#WhoisoutToday" aria-expanded="true" aria-controls="WhoisoutToday">
+              <i class="icon-task-done" aria-hidden="true"></i> Who is out Today
+            </button>
+          </h2>
+          <div id="WhoisoutToday" class="accordion-collapse collapse show" aria-labelledby="WhoisoutToday" data-bs-parent="#ScheduleCalendaraccordian">
+            <div class="accordion-body">
+              <!--<div class="Schedule_accradio">
+                <h3>Match</h3>
+                <div class="form-check me-2">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                  <label class="form-check-label" for="exampleRadios1">
+                    All
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                  <label class="form-check-label" for="exampleRadios2">
+                    Any
+                  </label>
+                </div>
+              </div>
+              <div class="Schedule_accfilter">
+                <h3 class="customtitle">Start Time:</h3>
+                <div class="Schedule_accdaterange mb-3">
+
+                  <input type="date" class="form-control" /> <span>-</span> <input type="date" class="form-control" />
+                </div>
+                <div class="Schedule_accsearchbox">
+                  <h3>Department</h3>
+                  <select class="form-select">
+                    <option>2022</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+                <div class="Schedule_filterBtn">
+                  <button>Search</button>
+                  <button>Reset</button>
+                </div>
+
+              </div>-->
+              <div class="Schedule_accreporttype">
+                <!--<select>
+      <option>View</option>
+    </select>-->
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Export to Excel
+                  </button>
+                </div>
+                <div class="Schedule_accExporttype">
+                  <button>
+                    <img src="../assets/images/Excellogo.png" /> Detach
+                  </button>
+                </div>
+              </div>
+              <div class="Schedule_accrtable">
+                <div class="Schedule_accrtableinn">
+                  <table class="table table-striped">
+                    <caption style="display:none">Data table</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Entry</th>
+                        <th scope="col">Deptid</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>123</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>123</td>
+                      </tr>
+                      <tr>
+                        <td>Atlas, Zeev</td>
+                        <td>26/8/2022</td>
+                        <td>123</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Schedule_calander content-wrapper">
+      <div class="Schedule_blocheadright">
+        <div class="Schedule_topfilters">
+          <div class="Schedule_filter Schedule_departmentfilter">
+            <h3>Department</h3>
+            <select>
+              <option>Asset Mgmt IT (20103 980)</option>
+            </select>
+          </div>
+          <div class="Schedule_filter Schedule_departmentfilter">
+            <h3>Employee</h3>
+            <select>
+              <option>Beechey, Ryan</option>
+            </select>
+          </div>
+          <div class="Schedule_filterBtn">
+            <button>Refresh</button>
+          </div>
+        </div>
+      </div>
+      <ejs-schedule width='100%' height='98vh' [selectedDate]="selectedDate" [eventSettings]="eventSettings"
+                    [(currentView)]="currentView" (eventRendered)="onEventRendered($event)" (created)="onCreate()"
+                    (actionBegin)="onActionBegin()" (actionComplete)="onActionComplete()" (actionFailure)="onActionFailure()"
+                    (cellClick)="onCellClick()" (cellDoubleClick)="onCellDoubleClick()" (destroyed)="onDestroyed()"
+                    (navigating)="onNavigating()" (eventClick)="onEventClick()" (popupOpen)="onPopupOpen()">
+      </ejs-schedule>
+    </div>
+    <div class="col-lg-3 property-section" style="display: none;">
+      <div class="property-panel-section">
+        <div class="property-panel-header">Properties</div>
+        <div class="property-panel-content">
+          <div id="property" class="property-panel-table" title="Properties">
+            <table id="property" title="Event Trace">
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="eventarea" style="height: 45px;overflow: auto">
+                      <span class="EventLog" id="EventLog" style="word-break: normal;"></span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="evtbtn" style="padding-bottom: 10px">
+                      <button ejs-button id='clear' class="btn btn-default" (click)="onClear()">Clear</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

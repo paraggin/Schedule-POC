@@ -39,3 +39,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/.vs/Schedule-POC/FileContentIndex/d7036b0b-3838-42a3-a566-be8acb91a4b0.vsidx
+/.vs/Schedule-POC/FileContentIndex
+/.vs/Schedule-POC/config
+/.vs/Schedule-POC/v17

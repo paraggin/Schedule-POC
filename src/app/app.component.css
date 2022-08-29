@@ -1,0 +1,215 @@
+
+#EventLog b {
+  color: #388e3c;
+}
+
+hr {
+  margin: 1px 10px 1px 0px;
+  border-top: 1px solid #eee;
+}
+
+.Schedule_blockmain {
+  display: flex;
+}
+
+.Schedule_tabBlock {
+  width: 350px;
+}
+
+.Schedule_calander {
+  width: calc(100% - 350px);
+}
+
+.Schedule_blocheadleft h3 {
+  font-size: 16px;
+  color: #0582be;
+  margin-bottom: 0;
+  text-align: center;
+}
+.Schedule_blocheadleft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding: 5px;
+}
+  .Schedule_blocheadleft h3 i {
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+  }
+
+.Schedule_topfilters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding: 5px;
+}
+
+  .Schedule_topfilters .Schedule_filter h3 {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+
+  .Schedule_topfilters .Schedule_filter {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+.Schedule_filterBtn button {
+  background-color: #23283c;
+  color: #fff;
+  border: 0;
+  padding: 0px 12px;
+  font-size: 16px;
+  transition:0.5s ease all;
+}
+  .Schedule_filterBtn button:hover {
+    background-color: #cfa052;
+  }
+.accordion-button:focus{
+    box-shadow:none;
+}
+.accordion-button {
+  padding: 10px 15px;
+  background-color: #397895;
+  color: #fff;
+}
+.accordion-button  i{
+  font-size: 26px;
+  margin-right: 10px;
+}
+  .accordion-button::after {
+    margin-left: auto;
+    background-image: none;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+    transition: transform .2s ease-in-out;
+  }
+  .accordion-button:not(.collapsed)::after {
+    background-image: none;
+    transform: rotate(45deg);
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: #cfa052;
+    color: #ffff;
+  }
+.Schedule_accsearchbox{
+    display:flex;
+    align-items:center;
+}
+  .Schedule_accsearchbox h3 {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+.Schedule_accdaterange h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.Schedule_accdaterange {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+  .Schedule_accdaterange input {
+    padding: 0.375rem 5px;
+  }
+  .Schedule_accdaterange span {
+    padding: 0 5px;
+  }
+.Schedule_accfilter .Schedule_filterBtn {
+  text-align: right;
+  margin-top:15px;
+}
+  .Schedule_accfilter .Schedule_filterBtn button {
+    margin-left: 10px;
+  }
+.Schedule_accreporttype img{
+    width:25px;
+}
+.Schedule_accreporttype {
+  display: flex;
+  justify-content: space-between;
+  margin-top:15px;
+}
+.Schedule_accExporttype {
+  display: flex;
+  align-items:center;
+}
+  .Schedule_accExporttype button {
+    background-color: transparent;
+    color: #000;
+    border: 0;
+    padding: 0px 5px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: 0.5s ease all;
+  }
+  .Schedule_accExporttype button:hover {
+    color: #23283c;    
+    border: 1px solid #000;
+  }
+.Schedule_accrtableinn table thead tr th{
+    font-size:12px;
+}
+.Schedule_accrtableinn table tbody tr td{
+    font-size:12px;
+}
+.Schedule_accrtableinn{
+    margin-top:15px;
+}
+.Schedule_accrtableinn table{
+    margin-bottom:0px;
+}
+.Schedule_accradio{
+    display:flex;
+    margin-bottom:15px;
+}
+.StatsbyYear .Schedule_accsearchbox h3 {
+  width: 100px;
+  padding-right: 10px;
+  text-align: right;
+  margin-right: 0;
+}
+.StatsbyYear .Schedule_accsearchbox{
+    margin-bottom:10px;
+}
+  .StatsbyYear .Schedule_accsearchbox select,
+  .StatsbyYear .Schedule_accsearchbox input{
+      max-width:calc(100% - 100px);
+  }
+.Schedule_accradio h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.Schedule_accfilter h3.customtitle {
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.header_section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 1px 2px 0px;
+}
+.header_section img{
+  max-width: 100%;
+}
+  .header_section h3 {
+    font-size: 26px;
+    margin-bottom: 0;
+  }

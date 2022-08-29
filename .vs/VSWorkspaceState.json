@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\dist",
+    "\\dist\\schedule-poc",
+    "\\src",
+    "\\src\\app",
+    "\\src\\assets\\icomoon"
   ],
+  "SelectedNode": "\\angular.json",
   "PreviewInSolutionExplorer": false
 }

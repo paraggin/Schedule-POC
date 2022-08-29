@@ -10,15 +10,17 @@ import {
   // tslint:disable-next-line:component-selector
   selector: 'app-root',
   templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'] 
   /* custom code start*/
-  styles: [`
-    #EventLog b {
-        color: #388e3c;
-    }
-    hr {
-        margin: 1px 10px 1px 0px;
-        border-top: 1px solid #eee;
-    }`],
+  //styles: [`
+  //  #EventLog b {
+  //      color: #388e3c;
+  //  }
+  //  hr {
+  //      margin: 1px 10px 1px 0px;
+  //      border-top: 1px solid #eee;
+  //  }`]
+  ,
   /* custom code end*/
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService, DragAndDropService],
   encapsulation: ViewEncapsulation.None
